@@ -28,7 +28,7 @@ function Form() {
         },
       })
         .then((res) => res.json())
-        .then((res) => setState(() => res.data.quote[params.convert].price));
+        .then((res) => setState(() => `${amount} ${res.data.name} ${res.data.symbol} =  ${res.data.quote[params.convert].price} ${params.convert}`));
     }
   };
 
