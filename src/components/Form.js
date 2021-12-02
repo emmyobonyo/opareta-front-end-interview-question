@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 function Form() {
   const [state, setState] = useState(0);
+  const [swap, setSwap] = useState(true);
 
   const handleClick = () => {
     const amount = document.getElementById('number').value ? document.getElementById('number').value : '0';
@@ -31,23 +32,45 @@ function Form() {
     }
   };
 
+  const clickButton = () => {
+    setSwap(() => !swap);
+  };
+
   return (
     <div>
       <input id="number" type="number" placeholder="Enter Amount" onChange={handleClick} />
       <br />
-      <select name="crypto" id="crypto" onChange={handleClick}>
-        <option value="1">Bitcoin (BTC)</option>
-        <option value="2">Litecoin (LIT)</option>
-        <option value="3">Namecoin (NMC)</option>
-      </select>
-      <button type="button">
+      { swap && (
+        <select name="crypto" id="crypto" onChange={handleClick}>
+          <option value="1">Bitcoin (BTC)</option>
+          <option value="2">Litecoin (LIT)</option>
+          <option value="3">Namecoin (NMC)</option>
+        </select>
+      ) }
+      { !swap && (
+        <select name="currency" id="currency" onChange={handleClick}>
+          <option value="USD">US Dollars ($)</option>
+          <option value="GBP">Pound Sterling (£)</option>
+          <option value="UGX">Uganda Shillings (/-)</option>
+        </select>
+      ) }
+      <button type="button" onClick={clickButton}>
         <i className="fa fa-exchange" aria-hidden="true" />
       </button>
-      <select name="currency" id="currency" onChange={handleClick}>
-        <option value="USD">US Dollars ($)</option>
-        <option value="GBP">Pound Sterling (£)</option>
-        <option value="UGX">Uganda Shillings (/-)</option>
-      </select>
+      { swap && (
+        <select name="currency" id="currency" onChange={handleClick}>
+          <option value="USD">US Dollars ($)</option>
+          <option value="GBP">Pound Sterling (£)</option>
+          <option value="UGX">Uganda Shillings (/-)</option>
+        </select>
+      ) }
+      { !swap && (
+        <select name="crypto" id="crypto" onChange={handleClick}>
+          <option value="1">Bitcoin (BTC)</option>
+          <option value="2">Litecoin (LIT)</option>
+          <option value="3">Namecoin (NMC)</option>
+        </select>
+      ) }
       <p>{ state }</p>
     </div>
   );
