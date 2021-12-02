@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Currency exchange system
 
 > A Web App that can convert Crypto-Currency to fiat and vice-versa.
