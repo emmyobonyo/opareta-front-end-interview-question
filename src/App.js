@@ -1,9 +1,10 @@
+import Form from './components/Form';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Dummy Information</h1>
+      <Form />
     </div>
   );
 }
