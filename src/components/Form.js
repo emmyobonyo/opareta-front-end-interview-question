@@ -65,25 +65,25 @@ function Form() {
   };
 
   return (
-    <div>
+    <div className="container">
       { swap && (
-        <input id="number" type="number" placeholder="Enter Amount" onChange={handleClick} />
+        <input id="number" className="input" type="number" placeholder="Enter Amount" onChange={handleClick} />
       )}
       {
         !swap && (
-          <input id="number" type="number" placeholder="Enter Amount" onChange={clickSwap} />
+          <input id="number" className="input" type="number" placeholder="Enter Amount" onChange={clickSwap} />
         )
       }
       <br />
       { swap && (
-        <select name="crypto" id="crypto" onChange={handleClick}>
+        <select className="select" name="crypto" id="crypto" onChange={handleClick}>
           <option value="1">Bitcoin (BTC)</option>
           <option value="2">Litecoin (LIT)</option>
           <option value="3">Namecoin (NMC)</option>
         </select>
       ) }
       { !swap && (
-        <select name="currency" id="currency" onChange={clickSwap}>
+        <select className="select" name="currency" id="currency" onChange={clickSwap}>
           <option value="2781">US Dollars ($)</option>
           <option value="2791">Pound Sterling (£)</option>
           <option value="3570">Uganda Shillings (/-)</option>
@@ -93,14 +93,14 @@ function Form() {
         <i className="fa fa-exchange" aria-hidden="true" />
       </button>
       { swap && (
-        <select name="currency" id="currency" onChange={handleClick}>
+        <select className="select" name="currency" id="currency" onChange={handleClick}>
           <option value="USD">US Dollars ($)</option>
           <option value="GBP">Pound Sterling (£)</option>
           <option value="UGX">Uganda Shillings (/-)</option>
         </select>
       ) }
       { !swap && (
-        <select name="crypto" id="crypto" onChange={clickSwap}>
+        <select className="select" name="crypto" id="crypto" onChange={clickSwap}>
           <option value="BTC">Bitcoin (BTC)</option>
           <option value="LIT">Litecoin (LIT)</option>
           <option value="NMC">Namecoin (NMC)</option>
